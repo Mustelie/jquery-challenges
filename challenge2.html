@@ -48,14 +48,14 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script>
 
-  useBilling.onchange = function() {
-  var home = $("#home");
-  if (this.checked){
-    home.attr('value', $("#billing").attr('value'));
-    home.attr('disabled', 'true');}
-  else {
-    home.attr('value', "");
-    home.attr('disabled', 'false');}
+    useBilling.onchange = function() {
+    var home = $("#home");
+      if (this.checked){
+        home.attr('value', $("#billing").attr('value'));
+        home.attr('disabled', 'true');}
+      else {
+        home.attr('value', "");
+        home.attr('disabled', 'false');}
   
   }</script>
 
