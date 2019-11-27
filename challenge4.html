@@ -30,7 +30,32 @@
         </fieldset>
         <input type="submit" value="Submit it!"> 
     </form>
-    <script src = "js/challenge4.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>ch4form.onsubmit = function() {
+    var validInput = true;
+    var name = $("#fullname")
+    var address = $("#streetaddr")
+    console.log("Here");
+    console.log(name);
+    console.log(address)
+    if (name.value.length == 0){
+        $("#nameerrormsg").attr('display', "block"); 
+        validInput = false;
+    }
+    else {
+        $("#nameerrormsg").attr('display', "none");
+    }
+
+    if (address.value.length == 0){
+        $("#addrerrormsg").attr('display', "block"); 
+        validInput = false;
+    }
+    else {
+        $("#addrerrormsg").attr('display', "none"); 
+    }
+
+    return validInput;
+}</script>
 
 </body>
 </html>

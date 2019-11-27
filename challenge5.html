@@ -43,25 +43,67 @@
 		<div id = "image">
 			Hover over an image below.
 		</div>
-
-		<img class = "preview" 
-			tabindex = "0"  
-		
-			alt = "Styling with a Bandana" 
-			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon.jpg">
-	
-		<img class = "preview" 
-			tabindex = "0"  
-			alt = "With My Boy" 
-			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon2.JPG">
 	
 		<img class = "preview" 
 			tabindex = "0"  
 		
-			src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/389177/bacon3.jpg" 
-			alt = "Young Puppy">
+			alt = "Stock Photo of an elderly woman with a gun" 
+			src = "img/stock1.jpg">
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Stock Photo of a woman with post-it notes stuck to her face" 
+			src = "img/stock2.jpg">
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Stock Photo of a man reclining in a chair in an open field" 
+			src = "img/stock3.jpg">
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Stock Photo of a man working at a desk with a noose around his neck" 
+			src = "img/stock4.jpg">
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Stock Photo of an elderly woman licking a popsicle" 
+			src = "img/stock5.jpg">
+		<img class = "preview" 
+			tabindex = "0"  
+		
+			alt = "Stock Photo of a woman holding a trumpet and covering her ears" 
+			src = "img/stock6.jpg">
 
-	<script src = "js/challenge5.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script>
+	console.log("here");
+	var imgs = $("img");
+	var msg = "Hover over an image below.";
+	for (let i = 0; i < imgs.length;i++){
+		imgs[i].onmouseover = function() {
+		 	$('#image').css('background-image', 'url(' + imgs[i].src + ')');
+		 	$('#image').html(imgs[i].alt);
+		 	$(imgs[i]).css('filter', 'blur(4px)');
+		 };
+
+		 imgs[i].onfocus = function() {
+		 	$('#image').css('background-image', 'url(' + imgs[i].src + ')');
+		 	$('#image').html(imgs[i].alt);
+		 };
+
+		 imgs[i].onmouseleave = function() {
+		 	$('#image').css('background-image', '');
+		 	$('#image').html(msg);
+		 	$(imgs[i]).css('filter', 'blur(0px)');
+		 };
+
+		 imgs[i].onblur = function() {
+		 	$('#image').css('background-image', '');
+		 	$('#image').html(msg);
+		 };
+}
+</script>
 
 
 </body>

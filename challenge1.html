@@ -41,6 +41,24 @@ When you test your form at the moment, you'll notice that you can click on the c
         <input type = "submit" value = "Go To Challenge 2">
       </fieldset>
     </form>
-    <script src = "js/challenge1.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+      subscribe.onchange = function() {
+  if (this.checked){
+    console.log("selected");
+      $('#emailField').attr('style', "display: block");
+    } else {
+      console.log("Not selected");
+      $('#emailField').attr('style', "display: none");
+    }
+
+
+    // Advanced Option....
+//    x.style.display == "block" ? 
+//    x.style.display = "none" : 
+//    x.style.display = "block"; 
+}
+
+</script>
   </body>
 </html>

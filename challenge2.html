@@ -37,7 +37,7 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
 
         <div>
           <label for ="home">Home Address:</label><br>
-          <input type="checkbox" name="useBilling" onclick = "setHomeAddress()" id="useBilling"> Same as above
+          <input type="checkbox" name="useBilling"  id="useBilling"> Same as above
           </label>
         <br>
         <textarea name="homeAdd" id="home"></textarea>
@@ -45,7 +45,19 @@ Add an if-else statement to your setHomeAddress() function so that when the chec
         <input type = "submit" value = "Go To Challenge 3">
       </fieldset>
 
-    <script src = "js/challenge2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+
+  useBilling.onchange = function() {
+  var home = $("#home");
+  if (this.checked){
+    home.attr('value', $("#billing").attr('value'));
+    home.attr('disabled', 'true');}
+  else {
+    home.attr('value', "");
+    home.attr('disabled', 'false');}
+  
+  }</script>
 
 </body>
 </html>
